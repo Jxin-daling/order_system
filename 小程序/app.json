@@ -1,12 +1,39 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/list/list",
+    "pages/order/list/list",
+    "pages/order/balance/balance",
+    "pages/detail/detail",
+    "pages/record/record"
   ],
   "window": {
-    "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarBackgroundColor": "#ffffff"
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "美食屋",
+    "navigationBarBackgroundColor": "#FF9C35",
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home_s.png"
+      },
+      {
+        "pagePath": "pages/order/list/list",
+        "text": "订单",
+        "iconPath": "images/order.png",
+        "selectedIconPath": "images/order_s.png"
+      },
+      {
+        "pagePath": "pages/record/record",
+        "text": "我的",
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/user_s.png"
+      }
+    ]
   },
   "style": "v2",
   "componentFramework": "glass-easel",

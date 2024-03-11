@@ -1,4 +1,4 @@
-// pages/index/index.js
+// pages/order/balance/balance.js
 Page({
 
   /**
