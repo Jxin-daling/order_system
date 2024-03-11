@@ -1,2 +1,22 @@
-<!--pages/index/index.wxml-->
-<text>pages/index/index.wxml</text>
+<view wx:for="{{listData}}" class="index_container">  
+  <!-- 顶部轮播图 -->
+  <swiper autoplay duration="1000" interval="5000" indicator-dots class="slide">
+    <swiper-item wx:for="{{item.imgUrls}}" wx:for-item="imgurl" wx:key="id" class="slide_image">
+      <image src="{{imgurl.src}}"/>
+    </swiper-item>
+  </swiper>
+
+  <!-- 中间点击进入菜单 -->
+  <view class="menu_bar">
+    <!-- 点击按钮 -->
+    <view class="menu_bar_start">开启点餐之旅→</view>
+    <!-- 推广图 -->
+    <image src="{{item.image_ad}}"/>
+  </view>
+  
+  <!-- 底部商品展示 -->
+  <view  class="bottom_box">
+    <view class="bottom_box_item" wx:for="{{item.image_bottom}}"  wx:for-item="imgurl" wx:key="id">
+      <image src="{{imgurl.src}}"/></view>
+    </view>
+</view>

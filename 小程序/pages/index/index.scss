@@ -1,1 +1,42 @@
 /* pages/index/index.wxss */
+.index_container{
+  
+  // 顶部轮播图
+  .slide{
+    
+    &_image image{
+      height: 300rpx;
+    }
+  }
+  
+  // 中间点餐
+  .menu_bar{
+    margin-bottom: 20rpx;
+    &_start{
+        width: 60%;
+        height: 50rpx;
+        padding: 5rpx;
+        background-color: orange;
+        color: white;
+        margin: 30rpx auto;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    image{
+      height: 450rpx;
+    }
+  }
+  
+  // 底部商品展示
+  .bottom_box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    &_item image{
+      width: 365rpx;
+      height: 300rpx;
+    }
+  }
+}
