@@ -1,0 +1,23 @@
+{
+  "id": "4464166",
+  "name": "项目2",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1265484",
+      "name": "加号",
+      "font_class": "jiahao1",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "33700601",
+      "name": "加号-copy",
+      "font_class": "jiahao",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    }
+  ]
+}
