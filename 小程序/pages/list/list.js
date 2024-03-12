@@ -1,66 +1,32 @@
-// pages/list/list.js
+const fetch = require('../../utils/fetch')
 Page({
-
-  /**
-   * 页面的初始数据
-   */
-  data: {
-
+  data:{
+    listData:'',
+    activeIndex:0,
+    toView:'a0'
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(options) {
-
+  // 切换选中样式
+  onselect(e){
+    let index = e.target.dataset.index
+    console.log(index);
+    this.setData({
+      activeIndex:index,
+      toView:'toView'+index
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
+  onLoad(){
+    wx.showLoading({
+      title: '正在努力加载中',
+    })
+    fetch('food/list').then((res)=>{
+      wx.hideLoading()
+      this.setData({
+        listData:res
+      })
+    }).catch(()=>{
+      wx.hideLoading()
+    })
   }
 })

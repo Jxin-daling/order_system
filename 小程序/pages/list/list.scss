@@ -1,1 +1,99 @@
 /* pages/list/list.wxss */
+.list_container{
+  // 顶部折扣信息显示
+  .discount{
+    text-align: center;
+    background-color: #fef9e6;
+    color: gray;
+    height:70rpx;
+    font-size: 28rpx;
+    line-height: 70rpx;
+
+    &_txt{
+      background-color: red;
+      color: #fff;
+      padding: 3px;
+      margin-right: 10rpx;
+    }
+  }
+
+  // 菜单栏目
+  .menu{
+    display: flex;
+
+    // 左侧导航栏
+    &_left{
+      flex:3;
+
+      &_item{
+        height: 100rpx;
+        line-height: 100rpx;
+        border-bottom: 1px solid #E3E3E3;
+        text-align: center;
+        font-size: 30rpx;
+        color:gray;
+      }
+
+      // 未选中时的状态
+      .unselect{
+        background-color: #F9F9F9;
+      }
+
+      // 选中时的状态
+      .selected{
+        color: #FF9C35;
+        border-left: 3px solid orange;
+      }
+    }
+
+    // 右侧对应商品显示
+    &_right{
+      display: flex;
+      flex:7;
+      height: 100vh;
+
+      &_item{
+        display: flex;
+        flex-wrap: wrap;
+        border-bottom: 1px solid gray;
+        height: 200rpx;
+        font-size: 30rpx;
+        
+        // 预览图
+        image{
+          width: 178rpx;
+          height: 100%;
+        }
+
+        // 信息描述
+        &_content{
+          display: flex;
+          line-height: 100rpx;
+          flex-direction: column;
+          flex-grow: 8;
+
+          // 商品名称
+          &_title{
+            margin-left: 20rpx;
+            text-align: left;
+            color: black;
+          }
+
+          &_bottom{
+            display: flex;
+            justify-content: space-between;
+            margin-left: 20rpx;
+
+            view{
+              color: red;
+            }
+            
+            icon{
+              color: orange;
+            }
+          }
+        }
+      }
+    }
+  }
+}

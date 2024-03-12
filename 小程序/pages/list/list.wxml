@@ -1,2 +1,40 @@
-<!--pages/list/list.wxml-->
-<text>pages/list/list.wxml</text>
+<view class="list_container">
+  <!-- 顶部折扣信息显示 -->
+  <view class="discount">
+    <text class="discount_txt">减</text>满50减10元（在线支付专项）
+  </view>
+
+  <!-- 菜单栏目 -->
+  <view class="menu">
+    <!-- 左侧导航栏 -->
+    <scroll-view scroll-y class="menu_left" scroll-into-view="">
+      <view wx:for="{{listData.data}}"
+      class="menu_left_item {{activeIndex === index ? 'selected' : 'unselect'}}"
+      wx:key="index"
+      data-index="{{index}}" 
+      bindtap="onselect">
+        {{item.name}}
+      </view>
+    </scroll-view>
+
+    <!-- 右侧对应商品展示 -->
+    <scroll-view scroll-y="true" scroll-top="scroll-top"
+    scroll-into-view="{{toView}}}" scroll-with-animation="true" class="menu_right">
+      <view><text>热销推荐</text></view>
+      <view wx:for="{{listData.data}}" wx:key="{{index}}">
+        <view wx:for="{{item.foods}}" wx:for-item="fooditem" class="menu_right_item">
+          <!-- 预览图 -->
+            <image src="{{fooditem.image_url}}"/>
+          <!-- 信息描述 -->
+          <view class="menu_right_item_content">
+            <view class="menu_right_item_content_title">{{fooditem.name}}</view>
+            <view class="menu_right_item_content_bottom">
+              <view>￥{{fooditem.specfoods[0].price}}.00</view>
+              <icon class="iconfont icon-jiahao1"></icon>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
