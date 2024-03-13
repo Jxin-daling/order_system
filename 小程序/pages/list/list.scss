@@ -1,5 +1,7 @@
 /* pages/list/list.wxss */
 .list_container{
+  overflow: hidden;
+  height: 100vh;
   // 顶部折扣信息显示
   .discount{
     text-align: center;
@@ -24,6 +26,7 @@
     // 左侧导航栏
     &_left{
       flex:3;
+      height: 100vh;
 
       &_item{
         height: 100rpx;
@@ -50,7 +53,7 @@
     &_right{
       display: flex;
       flex:7;
-      height: 100vh;
+      height: 1000px;
 
       &_item{
         display: flex;

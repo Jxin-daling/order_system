@@ -3,13 +3,13 @@ Page({
   data:{
     listData:'',
     activeIndex:0,
-    toView:'a0'
+    toView:'toView0'
   },
 
   // 切换选中样式
   onselect(e){
     let index = e.target.dataset.index
-    console.log(index);
+    console.log(e);
     this.setData({
       activeIndex:index,
       toView:'toView'+index
