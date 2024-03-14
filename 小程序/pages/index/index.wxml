@@ -9,7 +9,7 @@
   <!-- 中间点击进入菜单 -->
   <view class="menu_bar">
     <!-- 点击按钮 -->
-    <view class="menu_bar_start">开启点餐之旅→</view>
+    <navigator url="/pages/list/list" class="menu_bar_start">开启点餐之旅→</navigator>
     <!-- 推广图 -->
     <image src="{{item.image_ad}}"/>
   </view>
