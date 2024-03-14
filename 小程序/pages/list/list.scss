@@ -2,6 +2,7 @@
 .list_container{
   overflow: hidden;
   height: 100vh;
+  
   // 顶部折扣信息显示
   .discount{
     text-align: center;
@@ -22,11 +23,11 @@
   // 菜单栏目
   .menu{
     display: flex;
+    height: 80vh;
 
     // 左侧导航栏
     &_left{
       flex:3;
-      height: 100vh;
 
       &_item{
         height: 100rpx;
@@ -53,7 +54,12 @@
     &_right{
       display: flex;
       flex:7;
-      height: 1000px;
+
+      &_tip{
+        color: orange;
+        font-size: 30rpx;
+        background-color: #F9F9F9;
+      }
 
       &_item{
         display: flex;
@@ -77,7 +83,7 @@
 
           // 商品名称
           &_title{
-            margin-left: 20rpx;
+            margin-left: 10rpx;
             text-align: left;
             color: black;
           }
@@ -99,4 +105,177 @@
       }
     }
   }
+
+  // 底部购物车
+  .cart{
+    position: fixed;
+
+    // 气泡小标
+    &_msg{
+      position: absolute;
+      left: 140rpx;
+      bottom: 65rpx;
+      width: 50rpx;
+      height: 50rpx;
+      background-color: red;
+      border-radius: 50%;
+      color: white;
+      text-align: center;
+    }
+
+    // 消息提示
+    &_news{
+      width: 750rpx;
+      height: 50rpx;
+      text-align: center;
+      background-color: #FFCD9B;
+
+      text{
+        font-size: 30rpx;
+        color: white;
+      }
+    }
+
+    // 购物车栏目
+    &_item{
+      display: flex;
+
+      &_left{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-grow: 7;
+        padding-right: 20rpx;
+        background-color: #353535;
+
+        &_price{
+          color: white !important;
+        }
+
+        icon{
+          color: orange;
+          font-size: 90rpx;
+        }
+
+        text{
+          color: gray;
+        }
+      }
+
+      &_right{
+        flex-grow: 3;
+        text-align: center;
+        height: 130rpx;
+        line-height: 130rpx;
+        background-color: orange;
+        color: white;
+      }
+    }
+  }
+
+  // 购物车详情列表
+  .cartlist{
+    position: absolute;
+    width: 750rpx;
+    height: calc(80vh + 120rpx);
+    top: 0;
+
+    &_mask{
+      width: 750rpx;
+      height: 100%;
+      opacity: 0.4;
+      background-color: black;
+    }
+
+    &_panel{
+      width: 750rpx;
+      position: absolute;
+      bottom: 0;
+
+      &_title{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 35rpx;
+        background-color: #E3E3E3;
+        height: 80rpx;
+        color: gray;
+
+        &_left{
+          margin-left: 30rpx;
+        }
+
+        &_left::before{
+          display: inline-block;
+          content: '';
+          width: 10rpx;
+          height: 35rpx;
+          background-color: orange;
+          margin-right: 20rpx;
+        }
+      }
+    }
+
+    &_item{
+      background-color: white;
+      max-height: 45vh;
+
+      &_info{
+        display: flex;
+        height: 120rpx;
+        border: 1px solid black;
+        justify-content: space-between;
+        align-items: center;
+
+        &_left{
+          display: flex;
+          align-items: center;
+          &_img{
+            width: 40px;
+            height: 40px;
+
+            image{
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+      
+
+        &_right{
+          display: flex;
+          position: relative;
+
+          &_action{
+            margin-right: 100rpx;
+          }
+
+          &_icon{
+            position: absolute;
+            right: 40rpx;
+            top: -10rpx;
+            color: red;
+
+            icon{
+              font-size: 40rpx;
+            }
+          }
+        }
+     
+      }
+    }
+  }
+
+ 
+  
+  //购物车无商品时购物车样式
+  .noitem_cart{
+      color: gray !important;
+  } 
+
+  //购物车无商品时按钮样式
+  .noitem_btn{
+    color:gray;
+    background-color: white;
+  } 
 }

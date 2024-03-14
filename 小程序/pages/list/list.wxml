@@ -18,10 +18,10 @@
     </scroll-view>
 
     <!-- 右侧对应商品展示 -->
-    <scroll-view scroll-y="true" scroll-top="scroll-top"
+    <scroll-view scroll-y scroll-top
     scroll-into-view="{{toView}}" scroll-with-animation="true" class="menu_right">
-      <view><text>热销推荐</text></view>
       <view wx:for="{{listData.data}}" wx:key="{{index}}" id="toView{{index}}">
+        <view class="menu_right_tip"><text>{{item.name}}</text></view>
         <view wx:for="{{item.foods}}" wx:for-item="fooditem" class="menu_right_item">
           <!-- 预览图 -->
             <image src="{{fooditem.image_url}}"/>
@@ -30,11 +30,64 @@
             <view class="menu_right_item_content_title">{{fooditem.name}}</view>
             <view class="menu_right_item_content_bottom">
               <view>￥{{fooditem.specfoods[0].price}}.00</view>
-              <icon class="iconfont icon-jiahao1"></icon>
+              <icon class="iconfont icon-jiahao1" bindtap="addToCart" data-type="{{fooditem}}" data-index="{{index}}"/>
             </view>
           </view>
         </view>
       </view>
     </scroll-view>
+  </view>
+
+  <!-- 底部购物车 -->
+  <view class="cart">
+    <!-- 消息提示 -->
+    <view class="cart_news">
+      <text>满25立减3元(手机点餐专享)</text>
+    </view>
+    <!-- 购物车栏目 -->
+    <view class="cart_item">
+        <view class="cart_item_left">
+          <!-- 气泡小标 -->
+          <view class="cart_msg" wx:if="{{cartlist}}">{{cartlist}}</view>
+          <icon class="iconfont icon-gouwuchefill {{sumMoney!=0?'':'noitem_cart'}}" bindtap="showcart"></icon>
+          <text wx:if="{{!sumMoney}}">购物车是空的</text>
+          <text wx:else class="cart_item_left_price">￥{{sumMoney}}.00</text>
+        </view>
+        <view class="cart_item_right {{sumMoney!=0?'':'noitem_btn'}}" bindtap="goBalance">
+          选好啦
+        </view>
+    </view>
+  </view>
+
+  <!-- 购物车详情列表 -->
+  <view class="cartlist" wx:if="{{showlist}}">
+    <view class="cartlist_mask" bindtap="showcart"></view>
+    <view class="cartlist_panel">
+      <view class="cartlist_panel_title">
+        <view class="cartlist_panel_title_left">已选商品</view>
+        <view class="cartlist_panel_title_right" bindtap="clearcart">
+          <icon class="iconfont icon-icon"/>
+          清空购物车
+        </view>
+      </view>
+      <scroll-view scroll-y class="cartlist_item">
+        <view class="cartlist_item_info" wx:for="{{cartitem}}">
+          <view class="cartlist_item_info_left">
+            <view class="cartlist_item_info_left_img">
+              <image src="{{item.image_url}}"/>
+            </view>
+            <view class="cartlist_item_info_left_name">{{item.name}}</view>
+          </view>
+          <view class="cartlist_item_info_right">
+            <view class="cartlist_item_info_right_action">
+              <view>￥{{item.specfoods[0].price}}</view>
+            </view>
+            <view class="cartlist_item_info_right_icon" bindtap="delitem" data-index="{{index}}">
+                <icon class="iconfont icon-icon"/>
+              </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
   </view>
 </view>
