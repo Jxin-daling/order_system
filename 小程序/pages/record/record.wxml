@@ -1,2 +1,18 @@
-<!--pages/record/record.wxml-->
-<text>pages/record/record.wxml</text>
+<view class="record">
+  <!-- 腾讯 -->
+  <view class="record_avatar">
+    <image src="{{listData.avatar}}"/>
+  </view>
+  <!-- 标题 -->
+  <view class="record_title">消费记录</view>
+  <!-- 消费记录 -->
+  <view class="record_content" wx:for="{{listData.record}}">
+    <view class="record_content_left">
+      <view>消费</view>
+      <view class="record_content_left_time">{{item.date}}</view>
+    </view>
+    <view class="record_content_right">
+      <view class="record_content_right_price">￥{{item.summoney}}</view>
+    </view>
+  </view>
+</view>
