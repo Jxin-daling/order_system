@@ -1,2 +1,27 @@
-<!--pages/order/balance/balance.wxml-->
-<text>pages/order/balance/balance.wxml</text>
+<view class="balance">
+  <view class="balance_title">请确认您的订单</view>
+  <view class="balance_detail">订单详情</view>
+  <view class="balance_item">
+    <view class="balance_item_name">商品名称</view>
+    <view class="balance_item_price">￥19.00</view>
+  </view>
+  <view class="balance_sum">
+    <view class="balance_sum_txt">总计</view>
+    <view class="balance_sum_num">￥19.00</view>
+  </view>
+  <!-- 备注 -->
+  <view class="balance_note">
+    <label class="balance_note_title">备注</label>
+    <textarea class="balance_note_textrea" value="" placeholder="如有其他需求，请输入备注" maxlength="300"/>
+  </view>
+
+  <!-- 底部栏目 -->
+  <view class="balance_bottom">
+    <view class="balance_bottom_left">
+      <view>合计：￥19.00</view>
+    </view>
+    <view class="balance_bottom_right" bindtap="goDetail">
+      去支付
+    </view>
+  </view>
+</view>
