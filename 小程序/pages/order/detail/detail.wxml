@@ -1,2 +1,46 @@
-<!--pages/order/detail/detail.wxml-->
-<text>pages/order/detail/detail.wxml</text>
+<view class="orderdetail">
+  <!-- 顶部栏目 -->
+  <view class="orderdetail_tabbar">
+    <view class="orderdetail_tabbar_left">
+      <view>取</view>
+      <view>餐</view>
+      <view>号</view>
+    </view>
+    <view class="orderdetail_tabbar_right">
+      <view class="orderdetail_tabbar_right_orderid">{{order.meunnumber}}</view>
+      <view class="orderdetail_tabbar_right_status">
+        <view wx:if="{{order.taken}}">已出餐</view>
+        <view wx:else>正在精心制作中···</view>
+      </view>
+      <view class="orderdetail_tabbar_right_tip">饮品制作中,尽快为你服务☺</view>
+    </view>
+  </view>
+
+  <!-- 订单信息 -->
+  <view class="orderdetail_info">
+    <view class="orderdetail_info_detail">订单详情</view>
+    <view class="orderdetail_info_item">
+      <view class="orderdetail_info_item_name">商品名称</view>
+      <view class="orderdetail_info_item_price">￥19.00</view>
+    </view>
+    <view class="orderdetail_info_sum">
+      <view class="orderdetail_info_sum_txt">总计</view>
+      <view class="orderdetail_info_sum_num">￥19.00</view>
+    </view>
+  </view>
+
+  <!-- 订单标识 -->
+  <view class="orderdetail_mark">
+    <view>
+      <text>订单信息 </text><text>{{order.orderinfo}}</text>
+    </view>
+    <view>
+      <text>订单号码 </text><text>{{order.ordernum}}</text>
+    </view>
+    <view>
+      <text>订单时间 </text><text>{{order.ordertime}}</text>
+    </view>
+  </view>
+
+  <view class="orderdetail_tip">请凭此画面至取餐柜台领取饮料</view>
+</view>

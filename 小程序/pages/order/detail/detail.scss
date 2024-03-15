@@ -1,1 +1,120 @@
-/* pages/order/detail/detail.wxss */
+.orderdetail{
+  // 顶部栏目
+  &_tabbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 300rpx;
+    background-color: #fef9f4;
+
+    &_left{
+      flex: 1;
+      background-color: rgb(228, 82, 82);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      width: 100rpx;
+      height: 80%;
+      margin: 0 35rpx;
+    }
+
+    &_right{
+      flex: 8;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+
+      &_orderid{
+        font-size: 35px;
+        padding: 10px;
+      }
+
+      &_status{
+        color: orange;
+      }
+
+      &_tip{
+        color: #a2a1a0;
+        font-size: 30rpx;
+      }
+    }
+  }
+
+  // 订单信息 
+  &_info{
+
+    &_detail{
+      font-size: 35rpx;
+      color: #E9E9E9;
+      height: 90rpx;
+      line-height: 90rpx;
+      margin-left: 30rpx;
+    }
+
+    &_item{
+      display: flex;
+      justify-content: space-between;
+      border: 1rpx solid #e3e3e3;
+      padding: 20rpx 0;
+      height: 80rpx;
+      line-height: 80rpx;
+      font-size: 40rpx;
+  
+      &_name{
+        margin-left: 20rpx;
+      }
+  
+      &_price{
+        margin-right: 20rpx;
+      }
+    }
+
+    &_sum{
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 20rpx solid #E9E9E9;
+      height: 90rpx;
+      line-height: 70rpx;
+      font-size: 35rpx;
+  
+      &_txt{
+        margin-left: 20rpx;
+      }
+  
+      &_num{
+        margin-right: 20rpx;
+        color: orange;
+      }
+    }
+  }
+
+  // 订单标识
+  &_mark{
+    
+    view{
+      border-bottom: 1px solid #a2a1a0;
+      padding: 20rpx;
+
+
+      text:nth-child(1){
+        color: #a2a1a0;
+        font-size: 35rpx;
+      }
+
+      text:nth-child(2){
+        font-size: 33rpx;
+      }
+    }
+  }
+
+  &_tip{
+    text-align: center;
+    background-color: orange;
+    color: white;
+    width: 80%;
+    padding: 30rpx;
+    margin: 30px   auto;
+  }
+}
