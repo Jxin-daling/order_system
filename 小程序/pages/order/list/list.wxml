@@ -1,2 +1,17 @@
-<!--pages/order/list/list.wxml-->
-<text>pages/order/list/list.wxml</text>
+<view class="orderlist">
+  <view style="height: 100vh;">
+    <view class="orderlist_items" wx:for="{{orderlist}}">
+      <view class="orderlist_item" wx:for="{{item.foods}}" wx:for-item="fooditem">
+        <view class="orderlist_item_left">
+            <view class="orderlist_item_left_time">下单时间:{{fooditem.date}}</view>
+            <view class="orderlist_item_left_info">{{fooditem.name}}{{fooditem.describe}} ￥{{fooditem.price}}</view>
+        </view>
+        <view class="orderlist_item_right">
+          <view class="orderlist_item_right_detail" bindtap="orderdetail" data-postid="{{item.order_id}}">查看详情</view>
+          <view class="orderlist_item_right_status" wx:if="{{item.taken}}">已取餐</view>
+          <view class="orderlist_item_right_status" wx:else>未取餐</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

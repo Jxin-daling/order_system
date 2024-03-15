@@ -1,1 +1,45 @@
-/* pages/order/list/list.wxss */
+.orderlist{
+
+  &_items{
+
+    .orderlist_item{
+      display: flex;
+      justify-content: space-between;
+      padding: 20rpx;
+      border-bottom: 1px solid #999;
+      margin: 15rpx auto;
+
+      &_left{
+
+        &_time{
+          color: #999;
+          font-size: 35rpx;
+        }
+
+        &_info{
+          font-size: 30rpx;
+        }
+      }
+
+      &_right{
+        display: flex;
+        align-items: center;
+
+        &_detail{
+          border: 1px solid orange;
+          color: orange;
+          font-size: 32rpx;
+          padding: 7rpx;
+        }
+
+        &_status{
+          background-color: #ffd161;
+          color: white;
+          padding: 7rpx;
+          font-size: 34rpx;
+          margin-left: 20rpx;
+        }
+      }
+  }
+  }
+}
