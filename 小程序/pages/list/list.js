@@ -70,8 +70,9 @@ Page({
           })
           return
         }
+
         wx.navigateTo({
-          url: '/pages/order/balance/balance',
+          url: '/pages/order/balance/balance?order_id='+res.data.order_id
         })
       })
      
